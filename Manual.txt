@@ -1,0 +1,54 @@
+Diesel Plant Control Panel
+
+First Connect the Components such as to Raspberry Pi:
+1. 8 Channel Relay Module
+2. MAX6675 Temp Sensor
+3. Touch Screen
+
+Pin Details
+
+Relay Pin List
+                           GPIO
+
+Temperature Control    ->	8
+PRE HEATER		     ->	7
+Water Pump		     ->    21
+Cooling Fan            ->    20
+Main Power 1           ->    16
+OIL PUMP               ->    12
+Diesel Pump            ->     1
+
+In Case of Raspberry Pi 4
+/.config/Adafruit_GPIO/Platform_detect.py
+Add the if clause:
+
+elif match.group(1) == 'BCM2835':
+	return 3
+
+	
+
+
+
+MAX6675 Temperature Pin
+
+Gnd   -> Pin 6 (Board)
+Vcc	-> 3.3v (GPIO 1)
+SCK   -> GPIO 25
+CS    -> GPIO 24
+SO    -> GPIO 18
+
+
+Touch Screen Configuration
+1.Connect the HDMI cable to Pi and Touch screen
+2.Connect a micro usb cable to Touch screen
+
+
+Paste The file --->  autorunmyfile.desktop
+in the location .config/autostart
+
+And Paste the File 
+1.GUI.py
+2.reqtemp.txt
+3.returntemp.py
+4.mtemp.py
+in the location /home/*hostname*
